@@ -1,3 +1,5 @@
+import java.awt.Graphics;
+
 public class Janela  extends JPanel{
     //expecificaçaõ do Jpanel
     //pontos inicial
@@ -16,11 +18,20 @@ public class Janela  extends JPanel{
         this.setBackground(Color.CYAN);//fundo da tela
         g2d.setColor(Color.MAGENTA);//cor da linha
         g2d.setStroke(new BasicStroke(10));
+       
         x0=10;
         y0=10;
         y1=120;
         x1=120;
         //modifica o tamanha da linha
-        x0=+=value;
+        x0+=value;
+        x1+=value; 
+        //redefinindo para fazer a conta
+        g2d.drawLine(x0, y0, x1, y1);
 
     }
+    public void atualizarValor(int novoValor){
+        this.valor=novoValor;
+        this.repaint();
+    }
+}
